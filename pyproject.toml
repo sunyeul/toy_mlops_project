@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "toy_mlops_project"
+version = "0.1.0"
+description = ""
+authors = ["junhyeong.kim <junhyeong.kim@brainpad.co.jp>"]
+packages = [
+    {include = "src"}
+]
+
+
+[tool.poetry.dependencies]
+# python env
+python = ">=3.8,<=3.11"
+
+# data version control
+dvc = ">=2.30.0, <3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.6.0"
+flake8 = "^5.0.4"
+isort = "^5.11.3"
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
