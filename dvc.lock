@@ -10,47 +10,47 @@ stages:
       md5: 5b49cf1b57fb9d6102b559d59d99df7c
       size: 109575994
     - path: src/featurization.py
-      md5: 3f5ff02225de95dd3c1d6b9966c19888
-      size: 1336
+      md5: 28ebe6269365df7500671ebf60afdc93
+      size: 1496
     outs:
     - path: data/processed/norm_params.json
-      md5: e46984ac8b7097bfddfe5d9210f78ca4
-      size: 54
+      md5: 9f8080d22ab9d69f34b3f7c129ff5cea
+      size: 138835
     - path: data/processed/test_data.npy
-      md5: a5257a91e73920bdd4cafd0f88105b74
-      size: 62800128
+      md5: c86e1c9c9a4f0151c4bda659f5469ff0
+      size: 1280128
     - path: data/processed/train_data.npy
-      md5: 9ee0468925c998fda26d197a14d1caec
-      size: 376800128
+      md5: 6c6bd45518ee5756fc74ab22ee886fe1
+      size: 7680128
   training:
     cmd: python src/train_model.py
     deps:
     - path: data/processed/train_data.npy
-      md5: 9ee0468925c998fda26d197a14d1caec
-      size: 376800128
+      md5: 6c6bd45518ee5756fc74ab22ee886fe1
+      size: 7680128
     - path: src/train_model.py
       md5: b4860db26ddb42241da4ff9519139478
       size: 1686
     outs:
     - path: metrics/train_metric.json
-      md5: 4feca668898e920d6fbf3a1a56982af0
-      size: 37
+      md5: 25e4280ae64569d7a871c5071518465e
+      size: 36
     - path: models/model.pkl
-      md5: f924c8c92b71c32ddd427546b717404b
-      size: 4970395
+      md5: 7996c8b776827f31c74c6ab3e7373f4f
+      size: 102195
   evaluation:
     cmd: python src/evaluation.py
     deps:
     - path: data/processed/test_data.npy
-      md5: a5257a91e73920bdd4cafd0f88105b74
-      size: 62800128
+      md5: c86e1c9c9a4f0151c4bda659f5469ff0
+      size: 1280128
     - path: models/model.pkl
-      md5: f924c8c92b71c32ddd427546b717404b
-      size: 4970395
+      md5: 7996c8b776827f31c74c6ab3e7373f4f
+      size: 102195
     - path: src/evaluation.py
       md5: 6dac4ce221b94ab7ffedd86e83f08b68
       size: 950
     outs:
     - path: metrics/eval.json
-      md5: 955a77c07f73aa266a85911b0561e516
+      md5: 5e82b84b3ef97a3ea523d2cdf8f9a446
       size: 20
