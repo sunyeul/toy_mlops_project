@@ -1,0 +1,7 @@
+.venv
+.vscode
+.pytest_cache
+__pycache__
+/references
+.DS_Store
+poetry.lock
