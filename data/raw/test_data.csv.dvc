@@ -1,0 +1,10 @@
+md5: 8438d6637e646e31a70806b52fbacea4
+frozen: true
+deps:
+- checksum: '"529e8334-1171323"'
+  size: 18289443
+  path: https://pjreddie.com/media/files/mnist_test.csv
+outs:
+- md5: c807df8d6d804ab2647fc15c3d40f543
+  size: 18289443
+  path: test_data.csv
