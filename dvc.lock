@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  download_dataset:
+    cmd: rye run python -m run.download_dataset +dir=local
+    deps:
+    - path: run/download_dataset.py
+      hash: md5
+      md5: 3247e03024ec4497fcb8477ff6b8eeaf
+      size: 1115
+    outs:
+    - path: data/raw
+      hash: md5
+      md5: 2e92afb04cc1088e96c965b66ea57b1b.dir
+      size: 93081
+      nfiles: 3
