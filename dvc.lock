@@ -13,3 +13,39 @@ stages:
       md5: 2e92afb04cc1088e96c965b66ea57b1b.dir
       size: 93081
       nfiles: 3
+  prepare_train_features:
+    cmd: rye run python -m run.prepare_features +dir=local phase=TRAIN
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 2e92afb04cc1088e96c965b66ea57b1b.dir
+      size: 93081
+      nfiles: 3
+    - path: run/prepare_features.py
+      hash: md5
+      md5: 5de64721d12c839a1f6a79af6cbecf45
+      size: 1027
+    outs:
+    - path: features/train
+      hash: md5
+      md5: c8201101402cb15cbc489fa982042b75.dir
+      size: 76485
+      nfiles: 11
+  prepare_test_features:
+    cmd: rye run python -m run.prepare_features +dir=local phase=TEST
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 2e92afb04cc1088e96c965b66ea57b1b.dir
+      size: 93081
+      nfiles: 3
+    - path: run/prepare_features.py
+      hash: md5
+      md5: 5de64721d12c839a1f6a79af6cbecf45
+      size: 1027
+    outs:
+    - path: features/test
+      hash: md5
+      md5: 6d8384cfaed4d8668da23cba435cf360.dir
+      size: 32957
+      nfiles: 10
