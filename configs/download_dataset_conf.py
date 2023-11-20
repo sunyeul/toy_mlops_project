@@ -2,13 +2,14 @@ from dataclasses import dataclass
 from hydra.core.config_store import ConfigStore
 from omegaconf import OmegaConf
 
+from configs.base_conf import BaseConfig
 from configs.dir_conf import DirConfig, LocalDirConfig, ColabDirConfig
 
 import hydra
 
 
 @dataclass
-class DownloadDatasetConfig:
+class DownloadDatasetConfig(BaseConfig):
     competition_name: str = "titanic"
     dir: DirConfig = DirConfig
 
