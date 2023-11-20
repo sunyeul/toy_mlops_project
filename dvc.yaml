@@ -5,3 +5,17 @@ stages:
       - run/download_dataset.py
     outs:
       - data/raw
+  prepare_train_features:
+    cmd: rye run python -m run.prepare_features +dir=local phase=TRAIN
+    deps:
+      - run/prepare_features.py
+      - data/raw
+    outs:
+      - features/train
+  prepare_test_features:
+    cmd: rye run python -m run.prepare_features +dir=local phase=TEST
+    deps:
+      - run/prepare_features.py
+      - data/raw
+    outs:
+      - features/test
